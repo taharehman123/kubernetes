@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taha-rehman
+spec:
+  selector:
+    matchLabels:
+      run: kubernetes-example
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: kubernetes-example
+    spec:
+      containers:
+        - name: taha-rehman
+          image: gcr.io/google-samples/node-hello:1.0
+          ports:
+            - containerPort: 8080
+              protocol: TCP
